@@ -1,21 +1,27 @@
 import React from 'react';
-import {Form} from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import './Search.css';
 
 function Search(props){
+    const onChangeSearch = (event) => {
+        props.setSearchValue(event.target.value)
+    }
     return (
-        <div className="search-bar-container justify-content-center md-form  active-cyan-2 mt-2">
-            <Form className=" search-bar">
-                <Form.Group className = " md-form form-sm active-pink-2 mt-2" controlId="formBasicEmail">
-                    <Form.Label className="search-results-placeholder">Search Movie Titles</Form.Label>
-                    <Form.Control className="search-control"placeholder="Enter Movie Title" value={props.searchValue} onChange={event => onChangeForm(event)} />
-                    <Form.Text className="text-muted"  >
-                       
-                </Form.Text>
-                </Form.Group>
-            </Form>
+        <div class="search-container mb-3">
+           <h3 class = "search-results">Search Movie Titles</h3>
+           <div class = "label-input ">
+
+            <label for="inputType "><FontAwesomeIcon size = '2x' icon={faSearch} /></label>
+            <input className="search-results form-control" id="searchInput" rows="2" placeholder="Enter Movie Title" value={props.searchValue} onChange={event => onChangeSearch(event)}></input>
+           </div>
+            
+            
         </div>
+
     )
-    
+   
 }
+
 
 export default Search;
