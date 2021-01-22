@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Col, Row, Alert } from 'react-bootstrap'
-import logo from './logo.svg';
+import { Container, Col, Row } from 'react-bootstrap'
 import './App.css';
 import Search from './components/Search';
 import MovieInfo from './components/MovieInfo';
@@ -12,9 +11,9 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
   const [nominatedMovies, setNominatedMovie] = useState(() => {
-    const stickyValue = window.localStorage.getItem(0);
-    return stickyValue !== null
-      ? JSON.parse(stickyValue)
+    const storage = window.localStorage.getItem(0);
+    return storage !== null
+      ? JSON.parse(storage)
       : [];
   });
   const [reachFive, setReachFive] = useState(false)
@@ -24,20 +23,22 @@ function App() {
     setItems(null);
     setError(null);
     setIsLoaded(false);
-    fetch(`https://www.omdbapi.com/?type=movie&s=${searchValue}&apikey=39f52195`)
-      .then(res => res.json())
+    fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=39f52195&plot=full`)
+      .then(
+        res => res.json()
       .then(
         (result) => {
           if (result.Response === "True") {
             setItems(result.Search);
             setIsLoaded(true);
+            console.log(result)
           }
           else {
             setIsLoaded(false);
             setError(result.Error);
           }
         }
-      )
+      ))
   }, [searchValue])
 
   useEffect(() => {

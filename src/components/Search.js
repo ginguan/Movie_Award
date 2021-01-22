@@ -5,7 +5,8 @@ import './Search.css';
 
 function Search(props){
     const onChangeSearch = (event) => {
-        props.setSearchValue(event.target.value)
+        props.setSearchValue(event.target.value);
+        console.log(event.target.value)
     }
     return (
         <div class="search-container mb-3">
@@ -14,6 +15,7 @@ function Search(props){
 
             <label for="inputType "><FontAwesomeIcon size = '2x' icon={faSearch} /></label>
             <input className="search-results form-control" id="searchInput" rows="2" placeholder="Enter Movie Title" value={props.searchValue} onChange={event => onChangeSearch(event)}></input>
+ 
            </div>
             
             

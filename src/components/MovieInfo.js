@@ -22,18 +22,27 @@ const MovieInfo = (props) =>{
 const movieList = (
     props.items ?
     <div> 
-        <Popup style={popup_style}
-        position='left center' 
-        trigger = {<ul className="list-group movie-info">
+       <ul className="list-group movie-info">
         {props.items.map(moive => (
+
           <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}  key={moive.imdbID} className="list-group-item ">
             <Row>
               <Col>
-                <Image alt="poster" src={moive.Poster} alt="poster" />
+              <Popup trigger=
+                {<Image alt="poster" src={moive.Poster} alt="poster" />}
+                position = "left top">
+              <Popup.Header>{moive.Production}
+              </Popup.Header>
+                <Popup.Content>
+                {moive.Rated}
+                </Popup.Content>
+                </Popup>
+
               </Col>
               <Col className="">
                 <p> {moive.Title}</p>
-                <p className="mt-4">({moive.Year})</p>
+                <p> {moive.Year}</p>
+
                 <Button
                   className="btn btn-warning"
                   value = "Nominate" 
@@ -46,11 +55,10 @@ const movieList = (
             </Row>
           </motion.button>
         ))}
-        </ul>}>
-
-      </Popup>
+      </ul>
       </div>
       : ' ')
+  
       
       return (
         <div className="">
