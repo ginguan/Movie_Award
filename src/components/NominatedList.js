@@ -1,8 +1,7 @@
 import React from 'react';
-import { Button, Image, Row, Col, Container } from 'react-bootstrap';
-import { motion } from "framer-motion"
-import FlipMove from "react-flip-move";
-import './NominatedList.css'
+import { Button, Row, Col, Container } from 'react-bootstrap';
+import { motion } from "framer-motion";
+import './NominatedList.css';
 function NominatedList(props) {
 
     const animationedCallback = (imdbID) => {
