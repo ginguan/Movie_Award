@@ -24,7 +24,7 @@ function App() {
     setItems(null);
     setError(null);
     setIsLoaded(false);
-    fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey={YourKey}&plot=full`)
+    fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=39f52195&plot=full`)
       .then(
         res => res.json()
       .then(
