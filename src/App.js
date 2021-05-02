@@ -43,12 +43,12 @@ function App() {
   }, [searchValue])
 
 
-  const clickFB=()=>{
-    FB.ui({
-      method: 'share',
-      href: 'https://developers.facebook.com/docs/',
-    }, function(response){});
-  }
+  // const clickFB=()=>{
+  //   FB.ui({
+  //     method: 'share',
+  //     href: 'https://developers.facebook.com/docs/',
+  //   }, function(response){});
+  // }
   useEffect(() => {
     window.localStorage.setItem(0, JSON.stringify(nominatedMovies));
     if (nominatedMovies.length === 5)
