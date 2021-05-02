@@ -6,6 +6,7 @@ import MovieInfo from './components/MovieInfo';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NominatedList from './components/NominatedList';
 
+
 function App() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -41,6 +42,13 @@ function App() {
       ))
   }, [searchValue])
 
+
+  const clickFB=()=>{
+    FB.ui({
+      method: 'share',
+      href: 'https://developers.facebook.com/docs/',
+    }, function(response){});
+  }
   useEffect(() => {
     window.localStorage.setItem(0, JSON.stringify(nominatedMovies));
     if (nominatedMovies.length === 5)
@@ -59,19 +67,22 @@ function App() {
         <Row>
           <Col>
           <MovieInfo items={items} setItems={setItems} nominatedMovies={nominatedMovies} setNominatedMovie={setNominatedMovie} isLoaded={isLoaded} error={error} />
-        
+
           </Col>
           <Col>
           <NominatedList nominatedMovies={nominatedMovies} setNominatedMovie={setNominatedMovie} />
-        
+
           </Col>
-        
+
         </Row>
-      
-        
+        <Row>
+
+        </Row>
+
+
       </Container>
-        
-        
+
+
     </div>
   );
 }
