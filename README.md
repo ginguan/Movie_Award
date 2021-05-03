@@ -12,6 +12,9 @@
     - User's choice of nominations is saved at local storage (will display selection when reopen the page)
     - Share link available for Facebook, Twitter, Linkedin, will pop up a share window
 
+### ScreenShot
+<img src="./src/images/nomination.gif" width="45%" height="45%" />
+
 ### Installation
     npm install
     npm start
