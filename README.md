@@ -13,7 +13,7 @@
     - Share link available for Facebook, Twitter, Linkedin, will pop up a share window
 
 ### ScreenShot
-<img src="./src/images/nomination.gif" width="45%" height="45%" />
+<img src="./src/images/nomination.gif" width="70%" height="70%" />
 
 ### Installation
     npm install
