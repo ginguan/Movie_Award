@@ -7,9 +7,10 @@
 #### Demo: https://ginguan.github.io/Movie_Award/
 
 - Some key features:
-    - Using OMDB api for movie searching, onChange searching function
-    - Animation effects for info display, empty list (nominated movies and search results)
-    - User's choice of dominations is saved at local storage
+    - Using OMDB api for movie searching (has default search options), onChange searching function, click the search box will select all text for changes
+    - Animations for info display, empty list (nominated movies and search results)
+    - User's choice of nominations is saved at local storage (will display selection when reopen the page)
+    - Share link available for Facebook, Twitter, Linkedin, will pop up a share window
 
 ### Installation
     npm install

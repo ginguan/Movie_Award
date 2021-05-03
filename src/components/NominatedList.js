@@ -29,7 +29,7 @@ function NominatedList(props) {
     console.log("props.nominatedMovies",props.nominatedMovies)
     return (
         <Container>
-        <Row  className="d-flex p-2">
+        <Row className="d-flex p-2">
                 {<span className="result-text d-flex justify-content-center">Nominated Movies</span>}
             </Row>
             <Row>

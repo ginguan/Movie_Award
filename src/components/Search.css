@@ -1,14 +1,14 @@
 .search-results {
-    
+
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 1.4em;
 }
 
-  
+
 
 .search-container {
-    flex-direction:"row";
+    flex-direction: row;
     border: 1px solid #eee;
     padding: 20px;
     /* width: 600px; */
@@ -19,6 +19,6 @@
 }
 
 .label-input{
-    display:flex; 
+    display:flex;
     flex-direction: row;
 }
