@@ -14,6 +14,11 @@
 
 ### ScreenShot
 <img src="./src/images/nomination.gif"/>
+<img src="./src/images/empty_list.gif"/>
+<img src="./src/images/share.gif"/>
+<img src="./src/images/linkedin.png"/>
+<img src="./src/images/facebook.png"/>
+
 
 ### Installation
     npm install
