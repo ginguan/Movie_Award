@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/Movie_Award/static/css/main.03966f71.chunk.css",
-    "main.js": "/Movie_Award/static/js/main.ca3dc527.chunk.js",
-    "main.js.map": "/Movie_Award/static/js/main.ca3dc527.chunk.js.map",
-    "runtime-main.js": "/Movie_Award/static/js/runtime-main.6764c423.js",
-    "runtime-main.js.map": "/Movie_Award/static/js/runtime-main.6764c423.js.map",
+    "main.css": "/Movie_Award/static/css/main.763ea197.chunk.css",
+    "main.js": "/Movie_Award/static/js/main.c7595250.chunk.js",
+    "main.js.map": "/Movie_Award/static/js/main.c7595250.chunk.js.map",
+    "runtime-main.js": "/Movie_Award/static/js/runtime-main.08e76c8d.js",
+    "runtime-main.js.map": "/Movie_Award/static/js/runtime-main.08e76c8d.js.map",
     "static/css/2.d65fdcc0.chunk.css": "/Movie_Award/static/css/2.d65fdcc0.chunk.css",
-    "static/js/2.9cbf2fa6.chunk.js": "/Movie_Award/static/js/2.9cbf2fa6.chunk.js",
-    "static/js/2.9cbf2fa6.chunk.js.map": "/Movie_Award/static/js/2.9cbf2fa6.chunk.js.map",
-    "static/js/3.b7c05f43.chunk.js": "/Movie_Award/static/js/3.b7c05f43.chunk.js",
-    "static/js/3.b7c05f43.chunk.js.map": "/Movie_Award/static/js/3.b7c05f43.chunk.js.map",
+    "static/js/2.8757cc78.chunk.js": "/Movie_Award/static/js/2.8757cc78.chunk.js",
+    "static/js/2.8757cc78.chunk.js.map": "/Movie_Award/static/js/2.8757cc78.chunk.js.map",
+    "static/js/3.1316f6fc.chunk.js": "/Movie_Award/static/js/3.1316f6fc.chunk.js",
+    "static/js/3.1316f6fc.chunk.js.map": "/Movie_Award/static/js/3.1316f6fc.chunk.js.map",
     "index.html": "/Movie_Award/index.html",
     "static/css/2.d65fdcc0.chunk.css.map": "/Movie_Award/static/css/2.d65fdcc0.chunk.css.map",
-    "static/css/main.03966f71.chunk.css.map": "/Movie_Award/static/css/main.03966f71.chunk.css.map",
-    "static/js/2.9cbf2fa6.chunk.js.LICENSE.txt": "/Movie_Award/static/js/2.9cbf2fa6.chunk.js.LICENSE.txt"
+    "static/css/main.763ea197.chunk.css.map": "/Movie_Award/static/css/main.763ea197.chunk.css.map",
+    "static/js/2.8757cc78.chunk.js.LICENSE.txt": "/Movie_Award/static/js/2.8757cc78.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6764c423.js",
+    "static/js/runtime-main.08e76c8d.js",
     "static/css/2.d65fdcc0.chunk.css",
-    "static/js/2.9cbf2fa6.chunk.js",
-    "static/css/main.03966f71.chunk.css",
-    "static/js/main.ca3dc527.chunk.js"
+    "static/js/2.8757cc78.chunk.js",
+    "static/css/main.763ea197.chunk.css",
+    "static/js/main.c7595250.chunk.js"
   ]
 }
