@@ -5,15 +5,7 @@ import Search from './components/Search';
 import MovieInfo from './components/MovieInfo';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NominatedList from './components/NominatedList';
-import {Popup} from 'semantic-ui-react';
-import {
-    FacebookIcon,
-    FacebookShareButton,
-    LinkedinIcon,
-    LinkedinShareButton,
-    TwitterIcon,
-    TwitterShareButton,
-} from "react-share";
+import ShareLink from "./components/ShareLink";
 import {faSmileWink} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
@@ -63,9 +55,6 @@ function App() {
   }, [nominatedMovies])
 
   return (
-
-
-
     <div className="App">
       <Container>
         <Row>
@@ -84,26 +73,7 @@ function App() {
                   </Alert>:''}
               </div>
           <NominatedList nominatedMovies={nominatedMovies} setNominatedMovie={setNominatedMovie} />
-            <div style = {{marginTop:15, fontWeight: "bold"}}> Share:
-              <Popup content='Share via Twitter' basic position='bottom center'
-                     trigger={
-                       <TwitterShareButton className="share-btn" url={shareUrl} title = {title}>
-                         <TwitterIcon size={32} round={true} />
-                       </TwitterShareButton>
-                     } />
-              <Popup content='Share via Facebook' basic position='bottom center'
-                     trigger={
-                       <FacebookShareButton className="share-btn" url={shareUrl}  title = {title}>
-                         <FacebookIcon size={32} round={true} />
-                       </FacebookShareButton>
-                     } />
-              <Popup content='Share via Linkedin' basic position='bottom center'
-                     trigger={
-                       <LinkedinShareButton className="share-btn" url={shareUrl}  title = {title}>
-                         <LinkedinIcon size={32} round={true} />
-                       </LinkedinShareButton>
-                     } />
-            </div>
+          <ShareLink/>
           </Col>
 
         </Row>

@@ -4,9 +4,8 @@ import './NominatedList.css';
 import './Lottie.css';
 import Lottie from 'react-lottie';
 import * as emptyBoxAnimation from "../images/empty_box.json";
-import faSmileWink from '@fortawesome/free-solid-svg-icons';
-function NominatedList(props) {
 
+function NominatedList(props) {
     const animationedCallback = (imdbID) => {
         props.setNominatedMovie(props.nominatedMovies.filter(item => item.imdbID !== imdbID))
     }
