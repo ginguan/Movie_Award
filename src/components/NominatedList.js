@@ -1,11 +1,10 @@
 import React from 'react';
-import { Button, Row, Col, Container } from 'react-bootstrap';
-import { motion } from "framer-motion";
+import {Button, Container, Row} from 'react-bootstrap';
 import './NominatedList.css';
 import './Lottie.css';
 import Lottie from 'react-lottie';
 import * as emptyBoxAnimation from "../images/empty_box.json";
-
+import faSmileWink from '@fortawesome/free-solid-svg-icons';
 function NominatedList(props) {
 
     const animationedCallback = (imdbID) => {
@@ -41,7 +40,6 @@ function NominatedList(props) {
                         <div className="noimated-info">
                             {
                                 props.nominatedMovies.map(nominatedMovie => (
-
                                     <li key={nominatedMovie.imdbID} className="list-group-item d-flex justify-content-between" >
                                         <p className="p-0 m-0"> {nominatedMovie.Title}({nominatedMovie.Year})</p>
                                         <Button className="ml-4 button-delete" variant="danger" imdbid={nominatedMovie.imdbID} onClick={handleRemoveItem} active >

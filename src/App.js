@@ -1,15 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Col, Row } from 'react-bootstrap'
+import React, {useEffect, useState} from 'react';
+import {Alert, Col, Container, Row} from 'react-bootstrap'
 import './App.css';
 import Search from './components/Search';
 import MovieInfo from './components/MovieInfo';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NominatedList from './components/NominatedList';
-import { Popup } from 'semantic-ui-react';
+import {Popup} from 'semantic-ui-react';
 import {
-  TwitterShareButton, FacebookShareButton, LinkedinShareButton,
-  TwitterIcon, FacebookIcon, LinkedinIcon,
+    FacebookIcon,
+    FacebookShareButton,
+    LinkedinIcon,
+    LinkedinShareButton,
+    TwitterIcon,
+    TwitterShareButton,
 } from "react-share";
+import {faSmileWink} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 function App() {
   const [error, setError] = useState(null);
@@ -52,11 +58,14 @@ function App() {
     window.localStorage.setItem(0, JSON.stringify(nominatedMovies));
     if (nominatedMovies.length === 5)
       setReachFive(true);
+
     else
       setReachFive(false);
   }, [nominatedMovies])
 
   return (
+
+
 
     <div className="App">
       <Container>
@@ -69,6 +78,13 @@ function App() {
 
           </Col>
           <Col>
+              <div>
+                  {reachFive?
+                      <Alert variant="danger">
+                          <FontAwesomeIcon icon={faSmileWink} />
+                           Sorry, Only 5 nominations can be added.
+                  </Alert>:''}
+              </div>
           <NominatedList nominatedMovies={nominatedMovies} setNominatedMovie={setNominatedMovie} />
             <div style = {{marginTop:15, fontWeight: "bold"}}> Share:
               <Popup content='Share via Twitter' basic position='bottom center'
