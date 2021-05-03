@@ -1,0 +1,17 @@
+.lottie {
+    position: relative;
+    top:-25px;
+    left:-60px;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    padding-top: 135px;
+}
+.status {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -40px 0 0 -40px;
+}

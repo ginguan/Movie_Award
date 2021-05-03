@@ -3,6 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import './Search.css';
 
+const handleClick = (e) => {
+    e.target.select();
+};
+
 function Search(props){
     const onChangeSearch = (event) => {
         props.setSearchValue(event.target.value);
@@ -14,15 +18,15 @@ function Search(props){
            <div class = "label-input ">
 
             <label for="inputType "><FontAwesomeIcon size = '2x' icon={faSearch} /></label>
-            <input className="search-results form-control" id="searchInput" rows="2" placeholder="Enter Movie Title" value={props.searchValue} onChange={event => onChangeSearch(event)}></input>
- 
+            <input onFocus={handleClick} className="search-results form-control" id="searchInput" rows="2" placeholder="Enter Movie Title" value={props.searchValue} onChange={event => onChangeSearch(event)}></input>
+
            </div>
-            
-            
+
+
         </div>
 
     )
-   
+
 }
 
 

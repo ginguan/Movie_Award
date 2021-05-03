@@ -5,7 +5,11 @@ import Search from './components/Search';
 import MovieInfo from './components/MovieInfo';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NominatedList from './components/NominatedList';
-
+import { Popup } from 'semantic-ui-react';
+import {
+  TwitterShareButton, FacebookShareButton, LinkedinShareButton,
+  TwitterIcon, FacebookIcon, LinkedinIcon,
+} from "react-share";
 
 function App() {
   const [error, setError] = useState(null);
@@ -19,6 +23,8 @@ function App() {
   });
   const [reachFive, setReachFive] = useState(false)
   const [searchValue, setSearchValue] = useState("Blackpink");
+  const shareUrl = "https://ginguan.github.io/Movie_Award/"
+  const title = 'Movie Award';
 
   useEffect(() => {
     setItems(null);
@@ -42,13 +48,6 @@ function App() {
       ))
   }, [searchValue])
 
-
-  // const clickFB=()=>{
-  //   FB.ui({
-  //     method: 'share',
-  //     href: 'https://developers.facebook.com/docs/',
-  //   }, function(response){});
-  // }
   useEffect(() => {
     window.localStorage.setItem(0, JSON.stringify(nominatedMovies));
     if (nominatedMovies.length === 5)
@@ -71,14 +70,34 @@ function App() {
           </Col>
           <Col>
           <NominatedList nominatedMovies={nominatedMovies} setNominatedMovie={setNominatedMovie} />
-
+            <div style = {{marginTop:15, fontWeight: "bold"}}> Share:
+              <Popup content='Share via Twitter' basic position='bottom center'
+                     trigger={
+                       <TwitterShareButton className="share-btn" url={shareUrl} title = {title}>
+                         <TwitterIcon size={32} round={true} />
+                       </TwitterShareButton>
+                     } />
+              <Popup content='Share via Facebook' basic position='bottom center'
+                     trigger={
+                       <FacebookShareButton className="share-btn" url={shareUrl}  title = {title}>
+                         <FacebookIcon size={32} round={true} />
+                       </FacebookShareButton>
+                     } />
+              <Popup content='Share via Linkedin' basic position='bottom center'
+                     trigger={
+                       <LinkedinShareButton className="share-btn" url={shareUrl}  title = {title}>
+                         <LinkedinIcon size={32} round={true} />
+                       </LinkedinShareButton>
+                     } />
+            </div>
           </Col>
 
         </Row>
         <Row>
 
-        </Row>
 
+
+        </Row>
 
       </Container>
 

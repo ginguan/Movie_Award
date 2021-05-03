@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.share-btn {
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.share-btn:hover:not(:active) {
+  opacity: 0.5;
+}

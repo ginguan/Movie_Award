@@ -2,6 +2,10 @@ import React from 'react';
 import { Button, Row, Col, Container } from 'react-bootstrap';
 import { motion } from "framer-motion";
 import './NominatedList.css';
+import './Lottie.css';
+import Lottie from 'react-lottie';
+import * as emptyBoxAnimation from "../images/empty_box.json";
+
 function NominatedList(props) {
 
     const animationedCallback = (imdbID) => {
@@ -15,6 +19,15 @@ function NominatedList(props) {
         parent.addEventListener("animationend", animationedCallback(imdbID), false);
         // parent.classList.add("removed-item");
     }
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: emptyBoxAnimation.default,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice"
+        }
+    };
+    console.log("props.nominatedMovies",props.nominatedMovies)
     return (
         <Container>
         <Row  className="d-flex p-2">
@@ -22,22 +35,30 @@ function NominatedList(props) {
             </Row>
             <Row>
         <div className="noimated-info-container">
-            {props.nominatedMovies ?
-                <ul className="list-group  noimated-info" >
+            {props.nominatedMovies.length ?
+                <div>
+                    <div><ul className="list-group  noimated-info" >
+                        <div className="noimated-info">
+                            {
+                                props.nominatedMovies.map(nominatedMovie => (
 
-                    <div className="noimated-info">                    
-                        {
-                        props.nominatedMovies.map(nominatedMovie => (
+                                    <li key={nominatedMovie.imdbID} className="list-group-item d-flex justify-content-between" >
+                                        <p className="p-0 m-0"> {nominatedMovie.Title}({nominatedMovie.Year})</p>
+                                        <Button className="ml-4 button-delete" variant="danger" imdbid={nominatedMovie.imdbID} onClick={handleRemoveItem} active >
+                                            Remove
+                                        </Button>
+                                    </li>
+                                ))}</div>
 
-                        <li  key={nominatedMovie.imdbID} className="list-group-item d-flex justify-content-between" >
-                            <p className="p-0 m-0"> {nominatedMovie.Title}({nominatedMovie.Year})</p>
-                            <Button className="ml-4 button-delete" variant="danger" imdbid={nominatedMovie.imdbID} onClick={handleRemoveItem} active >
-                                Remove
-                                </Button>
-                        </li>
-                    ))}</div>
+                    </ul>
+                    </div>
+                    </div>:
+                <div className="text-center lottie">
+                <div className="status" >
+                <Lottie options={defaultOptions}  height={200} width={200}/>
+                </div>
+                </div>
 
-                </ul>: <p>Waiting for nomination...</p>
                     }
         </div>
         </Row>
