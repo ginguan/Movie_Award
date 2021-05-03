@@ -58,7 +58,6 @@ function App() {
     window.localStorage.setItem(0, JSON.stringify(nominatedMovies));
     if (nominatedMovies.length === 5)
       setReachFive(true);
-
     else
       setReachFive(false);
   }, [nominatedMovies])
@@ -75,7 +74,6 @@ function App() {
         <Row>
           <Col>
           <MovieInfo items={items} setItems={setItems} nominatedMovies={nominatedMovies} setNominatedMovie={setNominatedMovie} isLoaded={isLoaded} error={error} />
-
           </Col>
           <Col>
               <div>
