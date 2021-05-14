@@ -30,7 +30,7 @@
     "semantic-ui-react": "^2.0.3",
     "ssri": "8.0.1",
     "web-vitals": "^0.2.4",
-    "load-dash":"4.17.21"
+    "lodash":"^4.17.21"
   },
   "scripts": {
     "start": "react-scripts start",
